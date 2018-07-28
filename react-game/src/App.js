@@ -1,9 +1,11 @@
 import React from 'react'
-import './App.css'
+import HelloWorld from './Helloworld'
 
 const App = () => {
   return (
-    <div className="App">Hello World</div>
+    <div className="App">
+      <HelloWorld name="Ajo John"></HelloWorld>
+    </div>
   );
 }
 
