@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Importing Readt, React DOM and Babel-->
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Hello extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            message: 'Ajo John'
+          };
+          this.updateMessage = this.updateMessage.bind(this)
+        }
+        updateMessage() {
+          this.setState({
+            message: 'Ajo John Mathai'
+          })
+        }
+        render() {
+          return (
+            <div>
+              <h1>Hello, {this.state.message}</h1>
+              <button onClick={this.updateMessage}>Update Message</button>
+            </div>  
+          );
+        }
+      }
+      ReactDOM.render(
+        <Hello/>,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
