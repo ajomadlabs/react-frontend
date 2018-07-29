@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './Helloworld.css'
+import '.assets/css/Helloworld.css'
 
 class HelloWorld extends Component {
   constructor (props) {
