@@ -11,12 +11,26 @@
   background-color: rgba(0,0,0,0.4);
 }
 
+.rg-modal-input {
+  width: 50%;
+  border: 1px solid #ebebeb;
+  border-radius: .225rem;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.2em;
+  font-weight: 200;
+  padding: 12px;
+  color: #000;
+  margin-top: 9%;
+  margin-bottom: 1%;
+}
+
 .rg-modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 5% auto;
   padding: 20px;
-  border: 1px solid #888;
-  width: 70%;
+  border-radius: 0.225rem;
+  width: 40%;
+  height: 400px;
 }
 
 .rg-close {
@@ -24,6 +38,31 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+}
+
+.rg-modal-btn {
+  display: block;
+  width: 30%;
+  height: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #fff;
+  background-color: #2196f3;
+  text-align: center;
+  padding-top: 15px;
+  border-radius: .375rem;
+  margin-top: 3%;
+  cursor: pointer;
+}
+
+.rg-modal-header {
+  text-align: center;
+  margin-top: 4%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: #000;
 }
 
 .rg-close:hover,

@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
-import Button from './ButtonComponent'
-import Header from './HeaderComponent'
 import '../assets/css/Modal.css'
 
 class Modal extends Component {
   render () {
     return (
-      <div id="rg-modal-id" className="rg-modal">
+      <div className="rg-modal">
         <div className="rg-modal-content">
-          <span className="rg-modal-close">&times;</span>
-          <Header title={this.props.modalTitle}></Header>
+          <div className="rg-modal-header">{this.props.modalTitle}</div>
           <center>
-            <Button name="Enter"></Button>
+            <input type="text" className="rg-modal-input" placeholder="Enter Board Size"/>
+          </center>
+          <center>
+            <div className="rg-modal-btn">{this.props.modalButton}</div>
           </center>
         </div>
       </div>

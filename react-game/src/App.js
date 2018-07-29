@@ -10,7 +10,7 @@ const App = () => {
       <center>
         <Button name="Play"></Button>
       </center>
-      <Modal modalTitle="Board Size Input"></Modal>
+      <Modal modalTitle="Board Size Input" modalButton="Enter"></Modal>
     </div>
   );
 }
