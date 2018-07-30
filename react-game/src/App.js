@@ -10,7 +10,8 @@ class App extends Component {
       boardSize: ''
     }
     this.openModal = this.openModal.bind(this)
-    this.updateBoardSize = this.updateBoardSize.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   openModal () {
@@ -27,10 +28,13 @@ class App extends Component {
     }
   }
 
-  updateBoardSize (e) {
+  handleChange (e) {
     this.setState({
       boardSize: e.target.value
     })
+  }
+
+  handleClick () {
     console.log(this.state.boardSize)
   }
 
@@ -45,10 +49,10 @@ class App extends Component {
           <div className="rg-modal-content">
             <div className="rg-modal-header">Board Size Input</div>
             <center>
-              <input type="text" value={this.state.boardSize} onChange={e => this.updateBoardSize(e)} className="rg-modal-input" placeholder="Enter Board Size"/>
+              <input type="text" value={this.state.boardSize} onChange={e => this.handleChange(e)} className="rg-modal-input" placeholder="Enter Board Size"/>
             </center>
             <center>
-              <div className="rg-modal-btn">Enter</div>
+              <div onClick={this.handleClick} className="rg-modal-btn">Enter</div>
             </center>
           </div>
         </div>
