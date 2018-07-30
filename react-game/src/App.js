@@ -126,7 +126,7 @@ class App extends Component {
       let cols = []
       for (let j = 0; j < arrayDemo.length; j++) {
         if (arrayDemo[i][j] === 'hi') {
-          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
+          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-op"></i></td>)
         } else if (arrayDemo[i][j] === 'hero') {
           cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
         } else if (arrayDemo[i][j] === '') {
@@ -162,7 +162,7 @@ class App extends Component {
       let cols = []
       for (let j = 0; j < arrayDemo.length; j++) {
         if (arrayDemo[i][j] === 'hi') {
-          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
+          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-op"></i></td>)
         } else if (arrayDemo[i][j] === 'hero') {
           cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
         } else if (arrayDemo[i][j] === '') {
