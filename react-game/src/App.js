@@ -40,6 +40,7 @@ class App extends Component {
     let table = []
     let arrayDemo = []
 
+    // Define 2D Array
     for (let i = 0; i < this.state.boardSize; i++) {
       arrayDemo.push([])
     }
@@ -49,6 +50,7 @@ class App extends Component {
       }
     }
 
+    // Place Opponents Randomly
     let row = 0
     let col = 0
     let l = 0
@@ -60,6 +62,8 @@ class App extends Component {
       }
       l = l + 1
     }
+
+    // Place Hero Center
     let mid = 0
     if (Math.ceil(this.state.boardSize % 2) === 0) {
       mid = Math.ceil(this.state.boardSize / 2)
@@ -73,6 +77,7 @@ class App extends Component {
       }
     }
 
+    // Render Game Board
     for (let i = 0; i < arrayDemo.length; i++) {
       let cols = []
       for (let j = 0; j < arrayDemo.length; j++) {
