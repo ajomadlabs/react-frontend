@@ -166,13 +166,13 @@ class App extends Component {
 
   // Board Key EventHandler
   keyHandle = (e) => {
+    let arrayDemo = this.state.dataGrid
+    let row = this.state.heroPositionRow
+    let col = this.state.heroPositionCol
+    let heroRow = 0
+    let heroCol = 0
     if (e.keyCode === 38) {
-      let arrayDemo = this.state.dataGrid
-      let row = this.state.heroPositionRow
-      let col = this.state.heroPositionCol
       row = row - 1
-      let heroRow = 0
-      let heroCol = 0
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         row = row + 1
@@ -219,12 +219,7 @@ class App extends Component {
       }
 
     } else if (e.keyCode === 37) {
-      let arrayDemo = this.state.dataGrid
-      let row = this.state.heroPositionRow
-      let col = this.state.heroPositionCol
       col = col - 1
-      let heroRow = 0
-      let heroCol = 0
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         col = col + 1
@@ -271,12 +266,7 @@ class App extends Component {
       }
 
     } else if (e.keyCode === 39) {
-      let arrayDemo = this.state.dataGrid
-      let row = this.state.heroPositionRow
-      let col = this.state.heroPositionCol
       col = col + 1
-      let heroRow = 0
-      let heroCol = 0
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         col = col - 1
@@ -323,12 +313,7 @@ class App extends Component {
       }
 
     } else if (e.keyCode === 40) {
-      let arrayDemo = this.state.dataGrid
-      let row = this.state.heroPositionRow
-      let col = this.state.heroPositionCol
       row = row + 1
-      let heroRow = 0
-      let heroCol = 0
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         row = row - 1
