@@ -70,4 +70,65 @@
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.rg-end-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.rg-end-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 0.225rem;
+  width: 40%;
+  height: 200px;
+}
+
+.rg-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.rg-end-modal-btn {
+  display: block;
+  width: 30%;
+  height: 50px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #fff;
+  background-color: #2196f3;
+  text-align: center;
+  padding-top: 15px;
+  border-radius: .375rem;
+  margin-top: 3%;
+  cursor: pointer;
+}
+
+.rg-end-modal-header {
+  text-align: center;
+  margin-top: 4%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2em;
+  color: #000;
+}
+
+.rg-end-close:hover,
+.rg-end-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 } 

@@ -34,6 +34,25 @@ class App extends Component {
         modal.style.display = 'none'
       }
     }
+    this.setState({
+      boardSize: 0,
+      matrix: [],
+      dataGrid: [],
+      heroPositionRow: 0,
+      heroPositionCol: 0,
+      countStep: 0,
+      opponentCount: 0
+    })
+  }
+
+  openEndModal = () => {
+    let modal = document.getElementsByClassName('rg-end-modal')[0]
+    modal.style.display = 'block'
+    window.onclick = (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none'
+      }
+    }
   }
 
   handleChange = (e) => {
@@ -108,7 +127,6 @@ class App extends Component {
   }
 
   keyHandle = (e) => {
-    console.log(this.state.opponentCount)
     if (e.keyCode === 38) {
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
@@ -148,8 +166,12 @@ class App extends Component {
         heroPositionCol: heroCol,
         countStep: this.state.countStep + 1
       })
+
+      if (this.state.opponentCount === 1) {
+        this.openEndModal()
+      }
+
     } else if (e.keyCode === 37) {
-      console.log(this.state.opponentCount)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -189,8 +211,12 @@ class App extends Component {
         heroPositionCol: heroCol,
         countStep: this.state.countStep + 1
       })
+
+      if (this.state.opponentCount === 1) {
+        this.openEndModal()
+      }
+
     } else if (e.keyCode === 39) {
-      console.log(this.state.opponentCount)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -230,8 +256,12 @@ class App extends Component {
         heroPositionCol: heroCol,
         countStep: this.state.countStep + 1
       })
+
+      if (this.state.opponentCount === 1) {
+        this.openEndModal()
+      }
+
     } else if (e.keyCode === 40) {
-      console.log(this.state.opponentCount)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -271,6 +301,10 @@ class App extends Component {
         heroPositionCol: heroCol,
         countStep: this.state.countStep + 1
       })
+
+      if (this.state.opponentCount === 1) {
+        this.openEndModal()
+      }
     }
   }
 
@@ -299,6 +333,14 @@ class App extends Component {
             </tbody>
           </table>
         </center>
+        <div className="rg-end-modal">
+          <div className="rg-end-modal-content">
+            <div className="rg-end-modal-header">Game Over</div>
+            <center>
+              <div className="rg-end-modal-text">You took {this.state.countStep} to win the battle :)</div>
+            </center>
+          </div>
+        </div>
       </div>
     )
   }
