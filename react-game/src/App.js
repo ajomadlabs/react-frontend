@@ -9,7 +9,10 @@ class App extends Component {
     super()
     this.state = {
       boardSize: 0,
-      matrix: []
+      matrix: [],
+      dataGrid: [],
+      heroPositionRow: 0,
+      heroPositionCol: 0
     }
     this.openModal = this.openModal.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -70,9 +73,13 @@ class App extends Component {
     } else {
       mid = Math.ceil(this.state.boardSize / 2) - 1
     }
+    let heroRow = 0
+    let heroCol = 0
     for (let i = 0; i < arrayDemo.length; i++) {
       if (arrayDemo[mid][i] !== 'hi') {
         arrayDemo[mid][i] = 'hero'
+        heroRow = mid
+        heroCol = i
         break
       }
     }
@@ -86,7 +93,10 @@ class App extends Component {
       table.push(<tr id={i} key={i}>{cols}</tr>)
     }
     this.setState({
-      matrix: table
+      matrix: table,
+      dataGrid: arrayDemo,
+      heroPositionRow: heroRow,
+      heroPositionCol: heroCol
     })
   }
 
