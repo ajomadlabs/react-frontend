@@ -31,4 +31,6 @@ The games tells the number of steps taken by the hero to beat all the oponents.<
 - Run `npm start` for developement
 - Run `npm run build` for production
 
+## Project Video
 
+<a href="https://www.useloom.com/share/2912ca4edda5412c806ab9461ce094fa">React Maze Fa e</a>
