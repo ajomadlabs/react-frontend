@@ -17,6 +17,7 @@ class App extends Component {
     this.openModal = this.openModal.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.createBoard = this.createBoard.bind(this)
+    this.keyHandle = this.keyHandle.bind(this)
   }
 
   openModal = () => {
@@ -92,12 +93,25 @@ class App extends Component {
       }
       table.push(<tr id={i} key={i}>{cols}</tr>)
     }
+
     this.setState({
       matrix: table,
       dataGrid: arrayDemo,
       heroPositionRow: heroRow,
       heroPositionCol: heroCol
     })
+  }
+
+  keyHandle = (e) => {
+    if (e.keyCode === 38) {
+      console.log('Up Arrow')
+    } else if (e.keyCode === 37) {
+      console.log('Left Arrow')
+    } else if (e.keyCode === 39) {
+      console.log('Right Arrow')
+    } else if (e.keyCode === 40) {
+      console.log('Down Arrow')
+    }
   }
 
   render () {
@@ -119,7 +133,7 @@ class App extends Component {
           </div>
         </div>
         <center>
-          <table className="rg-table">
+          <table className="rg-table" tabIndex="0" onKeyUp={e => this.keyHandle(e)}>
             <tbody>
               {this.state.matrix}
             </tbody>
