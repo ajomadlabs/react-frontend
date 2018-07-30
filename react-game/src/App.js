@@ -104,13 +104,125 @@ class App extends Component {
 
   keyHandle = (e) => {
     if (e.keyCode === 38) {
-      console.log('Up Arrow')
+      let arrayDemo = this.state.dataGrid
+      let row = this.state.heroPositionRow
+      let col = this.state.heroPositionCol
+      row = row - 1
+      let heroRow = 0
+      let heroCol = 0
+      let table = []
+      if (arrayDemo[row][col] === '' || arrayDemo[row][col] === 'hi') {
+        arrayDemo[row][col] = 'hero'
+        row = row + 1
+        arrayDemo[row][col] = ''
+        heroRow = row - 1
+        heroCol = col
+      }
+      // Render Game Board'
+      for (let i = 0; i < arrayDemo.length; i++) {
+        let cols = []
+        for (let j = 0; j < arrayDemo.length; j++) {
+          cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
+        }
+        table.push(<tr id={i} key={i}>{cols}</tr>)
+      }
+
+      this.setState({
+        matrix: table,
+        dataGrid: arrayDemo,
+        heroPositionRow: heroRow,
+        heroPositionCol: heroCol
+      })
     } else if (e.keyCode === 37) {
-      console.log('Left Arrow')
+      let arrayDemo = this.state.dataGrid
+      let row = this.state.heroPositionRow
+      let col = this.state.heroPositionCol
+      col = col - 1
+      let heroRow = 0
+      let heroCol = 0
+      let table = []
+      if (arrayDemo[row][col] === '' || arrayDemo[row][col] === 'hi') {
+        arrayDemo[row][col] = 'hero'
+        col = col + 1
+        arrayDemo[row][col] = ''
+        heroRow = row
+        heroCol = col - 1
+      }
+      // Render Game Board'
+      for (let i = 0; i < arrayDemo.length; i++) {
+        let cols = []
+        for (let j = 0; j < arrayDemo.length; j++) {
+          cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
+        }
+        table.push(<tr id={i} key={i}>{cols}</tr>)
+      }
+
+      this.setState({
+        matrix: table,
+        dataGrid: arrayDemo,
+        heroPositionRow: heroRow,
+        heroPositionCol: heroCol
+      })
     } else if (e.keyCode === 39) {
-      console.log('Right Arrow')
+      let arrayDemo = this.state.dataGrid
+      let row = this.state.heroPositionRow
+      let col = this.state.heroPositionCol
+      col = col + 1
+      let heroRow = 0
+      let heroCol = 0
+      let table = []
+      if (arrayDemo[row][col] === '' || arrayDemo[row][col] === 'hi') {
+        arrayDemo[row][col] = 'hero'
+        col = col - 1
+        arrayDemo[row][col] = ''
+        heroRow = row
+        heroCol = col + 1
+      }
+      // Render Game Board'
+      for (let i = 0; i < arrayDemo.length; i++) {
+        let cols = []
+        for (let j = 0; j < arrayDemo.length; j++) {
+          cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
+        }
+        table.push(<tr id={i} key={i}>{cols}</tr>)
+      }
+
+      this.setState({
+        matrix: table,
+        dataGrid: arrayDemo,
+        heroPositionRow: heroRow,
+        heroPositionCol: heroCol
+      })
     } else if (e.keyCode === 40) {
-      console.log('Down Arrow')
+      let arrayDemo = this.state.dataGrid
+      let row = this.state.heroPositionRow
+      let col = this.state.heroPositionCol
+      row = row + 1
+      let heroRow = 0
+      let heroCol = 0
+      let table = []
+      if (arrayDemo[row][col] === '' || arrayDemo[row][col] === 'hi') {
+        arrayDemo[row][col] = 'hero'
+        row = row - 1
+        arrayDemo[row][col] = ''
+        heroRow = row + 1
+        heroCol = col
+      }
+      // Render Game Board'
+      for (let i = 0; i < arrayDemo.length; i++) {
+        let cols = []
+        for (let j = 0; j < arrayDemo.length; j++) {
+          cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
+        }
+        table.push(<tr id={i} key={i}>{cols}</tr>)
+      }
+
+      this.setState({
+        matrix: table,
+        dataGrid: arrayDemo,
+        heroPositionRow: heroRow,
+        heroPositionCol: heroCol
+      })
     }
   }
 
