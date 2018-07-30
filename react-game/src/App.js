@@ -77,13 +77,13 @@ class App extends Component {
       }
     }
 
-    // Render Game Board
+    // Render Game Board'
     for (let i = 0; i < arrayDemo.length; i++) {
       let cols = []
       for (let j = 0; j < arrayDemo.length; j++) {
-        cols.push(<td className="rg-table-data" key={j}>{arrayDemo[i][j]}</td>)
+        cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
       }
-      table.push(<tr key={i}>{cols}</tr>)
+      table.push(<tr id={i} key={i}>{cols}</tr>)
     }
     this.setState({
       matrix: table
