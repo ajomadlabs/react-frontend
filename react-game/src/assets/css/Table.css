@@ -5,6 +5,10 @@
   box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 }
 
+.rg-table:focus {
+  border: 1px solid #2196f3;
+}
+
 .rg-table-data {
   border: 2px solid #ebebeb;
   padding: 30px;

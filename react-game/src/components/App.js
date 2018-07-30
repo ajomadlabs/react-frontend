@@ -59,6 +59,11 @@ class App extends Component {
         modal.style.display = 'none'
       }
     }
+    this.setState({
+      boardSize: 0,
+      matrix: [],
+      dataGrid: []
+    })
   }
   // End
 
