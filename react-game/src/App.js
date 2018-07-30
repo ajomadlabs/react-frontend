@@ -21,6 +21,7 @@ class App extends Component {
     this.createBoard = this.createBoard.bind(this)
     this.keyHandle = this.keyHandle.bind(this)
     this.focus = this.focus.bind(this)
+    this.board = this.board.bind(this)
   }
 
   // Open Board Size Modal
@@ -143,7 +144,27 @@ class App extends Component {
     this.tableFocus.focus()
   }
 
-  // Board Rerendering
+  // Board Rendering
+  board = (arrayDemo) => {
+    // Render Game Board'
+    let table = []
+    for (let i = 0; i < arrayDemo.length; i++) {
+      let cols = []
+      for (let j = 0; j < arrayDemo.length; j++) {
+        if (arrayDemo[i][j] === 'hi') {
+          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
+        } else if (arrayDemo[i][j] === 'hero') {
+          cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
+        } else if (arrayDemo[i][j] === '') {
+          cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
+        }
+      }
+      table.push(<tr id={i} key={i}>{cols}</tr>)
+    }
+    return table
+  }
+
+  // Board Key EventHandler
   keyHandle = (e) => {
     if (e.keyCode === 38) {
       let arrayDemo = this.state.dataGrid
@@ -152,7 +173,6 @@ class App extends Component {
       row = row - 1
       let heroRow = 0
       let heroCol = 0
-      let table = []
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         row = row + 1
@@ -187,22 +207,8 @@ class App extends Component {
           })
         }
       }
-      // Render Game Board'
-      for (let i = 0; i < arrayDemo.length; i++) {
-        let cols = []
-        for (let j = 0; j < arrayDemo.length; j++) {
-          if (arrayDemo[i][j] === 'hi') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
-          } else if (arrayDemo[i][j] === 'hero') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
-          } else if (arrayDemo[i][j] === '') {
-            cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
-          }
-        }
-        table.push(<tr id={i} key={i}>{cols}</tr>)
-      }
       this.setState({
-        matrix: table,
+        matrix: this.board(arrayDemo),
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
         heroPositionCol: heroCol
@@ -219,7 +225,6 @@ class App extends Component {
       col = col - 1
       let heroRow = 0
       let heroCol = 0
-      let table = []
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         col = col + 1
@@ -254,23 +259,8 @@ class App extends Component {
           })
         }
       }
-      // Render Game Board'
-      for (let i = 0; i < arrayDemo.length; i++) {
-        let cols = []
-        for (let j = 0; j < arrayDemo.length; j++) {
-          if (arrayDemo[i][j] === 'hi') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
-          } else if (arrayDemo[i][j] === 'hero') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
-          } else if (arrayDemo[i][j] === '') {
-            cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
-          }
-        }
-        table.push(<tr id={i} key={i}>{cols}</tr>)
-      }
-
       this.setState({
-        matrix: table,
+        matrix: this.board(arrayDemo),
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
         heroPositionCol: heroCol
@@ -287,7 +277,6 @@ class App extends Component {
       col = col + 1
       let heroRow = 0
       let heroCol = 0
-      let table = []
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         col = col - 1
@@ -322,23 +311,8 @@ class App extends Component {
           })
         }
       }
-      // Render Game Board'
-      for (let i = 0; i < arrayDemo.length; i++) {
-        let cols = []
-        for (let j = 0; j < arrayDemo.length; j++) {
-          if (arrayDemo[i][j] === 'hi') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
-          } else if (arrayDemo[i][j] === 'hero') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
-          } else if (arrayDemo[i][j] === '') {
-            cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
-          }
-        }
-        table.push(<tr id={i} key={i}>{cols}</tr>)
-      }
-
       this.setState({
-        matrix: table,
+        matrix: this.board(arrayDemo),
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
         heroPositionCol: heroCol
@@ -355,7 +329,6 @@ class App extends Component {
       row = row + 1
       let heroRow = 0
       let heroCol = 0
-      let table = []
       if (arrayDemo[row][col] === '') {
         arrayDemo[row][col] = 'hero'
         row = row - 1
@@ -390,23 +363,8 @@ class App extends Component {
           })
         }
       }
-      // Render Game Board'
-      for (let i = 0; i < arrayDemo.length; i++) {
-        let cols = []
-        for (let j = 0; j < arrayDemo.length; j++) {
-          if (arrayDemo[i][j] === 'hi') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male"></i></td>)
-          } else if (arrayDemo[i][j] === 'hero') {
-            cols.push(<td className="rg-table-data" id={j} key={j}><i className="fas fa-male rg-table-hero"></i></td>)
-          } else if (arrayDemo[i][j] === '') {
-            cols.push(<td className="rg-table-data" id={j} key={j}>{arrayDemo[i][j]}</td>)
-          }
-        }
-        table.push(<tr id={i} key={i}>{cols}</tr>)
-      }
-
       this.setState({
-        matrix: table,
+        matrix: this.board(arrayDemo),
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
         heroPositionCol: heroCol
@@ -422,13 +380,13 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <Header title="React Maze Game"></Header>
+        <Header title="Welcome to React Maze Game"></Header>
         <center>
           <div onClick={this.openModal} className="rg-btn">Play</div>
         </center>
         <div className="rg-modal">
           <div className="rg-modal-content">
-            <div className="rg-modal-header">Board Size Input</div>
+            <div className="rg-modal-header">Enter Board Size</div>
             <center>
               <input type="text" value={this.state.boardSize} onChange={e => this.handleChange(e)} className="rg-modal-input" placeholder="Enter Board Size"/>
             </center>
