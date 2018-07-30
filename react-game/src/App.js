@@ -20,6 +20,7 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this)
     this.createBoard = this.createBoard.bind(this)
     this.keyHandle = this.keyHandle.bind(this)
+    this.focus = this.focus.bind(this)
   }
 
   // Open Board Size Modal
@@ -29,6 +30,7 @@ class App extends Component {
     let btn = document.getElementsByClassName('rg-modal-btn')[0]
     btn.onclick = () => {
       modal.style.display = 'none'
+      this.focus()
     }
     window.onclick = (e) => {
       if (e.target === modal) {
@@ -134,6 +136,11 @@ class App extends Component {
       heroPositionCol: heroCol,
       opponentCount: opCount
     })
+  }
+
+  // Focus Table
+  focus = () => {
+    this.tableFocus.focus()
   }
 
   // Board Rerendering
@@ -362,7 +369,7 @@ class App extends Component {
           </div>
         </div>
         <center>
-          <table className="rg-table" tabIndex="0" onKeyUp={e => this.keyHandle(e)}>
+          <table className="rg-table" tabIndex="0" ref={(table) => { this.tableFocus = table }} onKeyUp={e => this.keyHandle(e)}>
             <tbody>
               {this.state.matrix}
             </tbody>
@@ -372,7 +379,7 @@ class App extends Component {
           <div className="rg-end-modal-content">
             <div className="rg-end-modal-header">Game Over</div>
             <center>
-              <div className="rg-end-modal-text">You took {this.state.countStep} to win the battle :)</div>
+              <div className="rg-end-modal-text">You took <b>{this.state.countStep}</b> steps to win the battle :)</div>
             </center>
           </div>
         </div>

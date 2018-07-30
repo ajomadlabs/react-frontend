@@ -126,6 +126,15 @@
   color: #000;
 }
 
+.rg-end-modal-text {
+  text-align: center;
+  margin-top: 4%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #000;
+}
+
 .rg-end-close:hover,
 .rg-end-close:focus {
   color: black;
