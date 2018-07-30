@@ -8,7 +8,7 @@ class App extends Component {
   constructor () {
     super()
     this.state = {
-      boardSize: 0,
+      boardSize: '',
       matrix: [],
       dataGrid: [],
       heroPositionRow: 0,
@@ -392,7 +392,7 @@ class App extends Component {
           <div className="rg-modal-content">
             <div className="rg-modal-header">Enter Board Size</div>
             <center>
-              <input type="text" value={this.state.boardSize} onChange={e => this.handleChange(e)} className="rg-modal-input" placeholder="Enter Board Size"/>
+              <input type="text" value={this.state.boardSize} onChange={e => this.handleChange(e)} className="rg-modal-input" placeholder="Enter Size Greater than 2"/>
             </center>
             <center>
               <div onClick={this.createBoard} className="rg-modal-btn">Enter</div>
@@ -410,7 +410,7 @@ class App extends Component {
           <div className="rg-end-modal-content">
             <div className="rg-end-modal-header">Game Over</div>
             <center>
-              <div className="rg-end-modal-text">You took <b>{this.state.countStep}</b> steps to win the battle :)</div>
+              <div className="rg-end-modal-text">You took <b>{this.state.countStep}</b> steps to hit the green spirites :)</div>
             </center>
           </div>
         </div>
