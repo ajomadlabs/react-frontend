@@ -22,6 +22,7 @@ class App extends Component {
     this.keyHandle = this.keyHandle.bind(this)
   }
 
+  // Open Board Size Modal
   openModal = () => {
     let modal = document.getElementsByClassName('rg-modal')[0]
     modal.style.display = 'block'
@@ -45,6 +46,7 @@ class App extends Component {
     })
   }
 
+  // Open Game Over Modal
   openEndModal = () => {
     let modal = document.getElementsByClassName('rg-end-modal')[0]
     modal.style.display = 'block'
@@ -55,12 +57,14 @@ class App extends Component {
     }
   }
 
+  // Handle Change
   handleChange = (e) => {
     this.setState({
       boardSize: e.target.value
     })
   }
 
+  // Render Initial Game Board
   createBoard = () => {
     let table = []
     let arrayDemo = []
@@ -126,6 +130,7 @@ class App extends Component {
     })
   }
 
+  // Board Rerendering
   keyHandle = (e) => {
     if (e.keyCode === 38) {
       let arrayDemo = this.state.dataGrid
