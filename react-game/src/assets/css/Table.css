@@ -2,11 +2,12 @@
   border: 2px solid #ebebeb;
   margin-top: 3%;
   border-collapse: collapse;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 }
 
 .rg-table-data {
   border: 2px solid #ebebeb;
-  padding: 20px;
+  padding: 30px;
 }
 
 .rg-table-hero {
