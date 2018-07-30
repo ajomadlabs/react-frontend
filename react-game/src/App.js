@@ -48,6 +48,7 @@ class App extends Component {
       opponentCount: 0
     })
   }
+  // End
 
   // Open Game Over Modal
   openEndModal = () => {
@@ -59,6 +60,7 @@ class App extends Component {
       }
     }
   }
+  // End
 
   // Handle Change
   handleChange = (e) => {
@@ -66,6 +68,7 @@ class App extends Component {
       boardSize: e.target.value
     })
   }
+  // End
 
   // Render Initial Game Board
   createBoard = () => {
@@ -81,6 +84,7 @@ class App extends Component {
         arrayDemo[i].push('')
       }
     }
+    // End
 
     // Place Opponents Randomly
     let row = 0
@@ -96,6 +100,7 @@ class App extends Component {
       }
       l = l + 1
     }
+    // End
 
     // Place Hero Center
     let mid = 0
@@ -114,6 +119,7 @@ class App extends Component {
         break
       }
     }
+    // End
 
     // Render Game Board'
     for (let i = 0; i < arrayDemo.length; i++) {
@@ -129,7 +135,9 @@ class App extends Component {
       }
       table.push(<tr id={i} key={i}>{cols}</tr>)
     }
+    // End
 
+    // Update State
     this.setState({
       matrix: table,
       dataGrid: arrayDemo,
@@ -137,16 +145,18 @@ class App extends Component {
       heroPositionCol: heroCol,
       opponentCount: opCount
     })
+    // End
   }
+  // End
 
   // Focus Table
   focus = () => {
     this.tableFocus.focus()
   }
+  // End
 
   // Board Rendering
   board = (arrayDemo) => {
-    // Render Game Board'
     let table = []
     for (let i = 0; i < arrayDemo.length; i++) {
       let cols = []
@@ -163,6 +173,7 @@ class App extends Component {
     }
     return table
   }
+  // End
 
   // Board Key EventHandler
   keyHandle = (e) => {
@@ -171,6 +182,7 @@ class App extends Component {
     let col = this.state.heroPositionCol
     let heroRow = 0
     let heroCol = 0
+
     if (e.keyCode === 38) {
       row = row - 1
       if (arrayDemo[row][col] === '') {
@@ -359,7 +371,9 @@ class App extends Component {
         this.openEndModal()
       }
     }
+    // End
   }
+  // End
 
   // Final View
   render () {
@@ -398,6 +412,7 @@ class App extends Component {
       </div>
     )
   }
+  // End
 }
 
 export default App
