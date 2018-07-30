@@ -159,6 +159,9 @@ class App extends Component {
         arrayDemo[row][col] = ''
         heroRow = row - 1
         heroCol = col
+        this.setState({
+          countStep: this.state.countStep + 1
+        })
       } else if (arrayDemo[row][col] === 'hi') {
         arrayDemo[row][col] = 'hero'
         row = row + 1
@@ -166,8 +169,23 @@ class App extends Component {
         heroRow = row - 1
         heroCol = col
         this.setState({
-          opponentCount: this.state.opponentCount - 1
+          opponentCount: this.state.opponentCount - 1,
+          countStep: this.state.countStep + 1
         })
+      } else if (arrayDemo[row][col] !== 'hi' || arrayDemo[row][col] !== '') {
+        row = row + 1
+        arrayDemo[row][col] = 'hero'
+        heroRow = row
+        heroCol = col
+        if (this.state.countStep === 0) {
+          this.setState({
+            countStep: 0
+          })
+        } else {
+          this.setState({
+            countStep: this.state.countStep - 1
+          })
+        }
       }
       // Render Game Board'
       for (let i = 0; i < arrayDemo.length; i++) {
@@ -187,8 +205,7 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol,
-        countStep: this.state.countStep + 1
+        heroPositionCol: heroCol
       })
 
       if (this.state.opponentCount === 1) {
@@ -209,6 +226,9 @@ class App extends Component {
         arrayDemo[row][col] = ''
         heroRow = row
         heroCol = col - 1
+        this.setState({
+          countStep: this.state.countStep + 1
+        })
       } else if (arrayDemo[row][col] === 'hi') {
         arrayDemo[row][col] = 'hero'
         col = col + 1
@@ -216,8 +236,23 @@ class App extends Component {
         heroRow = row
         heroCol = col - 1
         this.setState({
-          opponentCount: this.state.opponentCount - 1
+          opponentCount: this.state.opponentCount - 1,
+          countStep: this.state.countStep + 1
         })
+      } else if (arrayDemo[row][col] !== 'hi' || arrayDemo[row][col] !== '') {
+        col = col + 1
+        arrayDemo[row][col] = 'hero'
+        heroRow = row
+        heroCol = col
+        if (this.state.countStep === 0) {
+          this.setState({
+            countStep: 0
+          })
+        } else {
+          this.setState({
+            countStep: this.state.countStep - 1
+          })
+        }
       }
       // Render Game Board'
       for (let i = 0; i < arrayDemo.length; i++) {
@@ -238,8 +273,7 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol,
-        countStep: this.state.countStep + 1
+        heroPositionCol: heroCol
       })
 
       if (this.state.opponentCount === 1) {
@@ -260,6 +294,9 @@ class App extends Component {
         arrayDemo[row][col] = ''
         heroRow = row
         heroCol = col + 1
+        this.setState({
+          countStep: this.state.countStep + 1
+        })
       } else if (arrayDemo[row][col] === 'hi') {
         arrayDemo[row][col] = 'hero'
         col = col - 1
@@ -267,8 +304,23 @@ class App extends Component {
         heroRow = row
         heroCol = col + 1
         this.setState({
-          opponentCount: this.state.opponentCount - 1
+          opponentCount: this.state.opponentCount - 1,
+          countStep: this.state.countStep + 1
         })
+      } else if (arrayDemo[row][col] !== 'hi' || arrayDemo[row][col] !== '') {
+        col = col - 1
+        arrayDemo[row][col] = 'hero'
+        heroRow = row
+        heroCol = col
+        if (this.state.countStep === 0) {
+          this.setState({
+            countStep: 0
+          })
+        } else {
+          this.setState({
+            countStep: this.state.countStep - 1
+          })
+        }
       }
       // Render Game Board'
       for (let i = 0; i < arrayDemo.length; i++) {
@@ -289,8 +341,7 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol,
-        countStep: this.state.countStep + 1
+        heroPositionCol: heroCol
       })
 
       if (this.state.opponentCount === 1) {
@@ -311,6 +362,9 @@ class App extends Component {
         arrayDemo[row][col] = ''
         heroRow = row + 1
         heroCol = col
+        this.setState({
+          countStep: this.state.countStep + 1
+        })
       } else if (arrayDemo[row][col] === 'hi') {
         arrayDemo[row][col] = 'hero'
         row = row - 1
@@ -318,8 +372,23 @@ class App extends Component {
         heroRow = row + 1
         heroCol = col
         this.setState({
-          opponentCount: this.state.opponentCount - 1
+          opponentCount: this.state.opponentCount - 1,
+          countStep: this.state.countStep + 1
         })
+      } else if (arrayDemo[row][col] !== 'hi' || arrayDemo[row][col] !== '') {
+        row = row - 1
+        arrayDemo[row][col] = 'hero'
+        heroRow = row
+        heroCol = col
+        if (this.state.countStep === 0) {
+          this.setState({
+            countStep: 0
+          })
+        } else {
+          this.setState({
+            countStep: this.state.countStep - 1
+          })
+        }
       }
       // Render Game Board'
       for (let i = 0; i < arrayDemo.length; i++) {
@@ -340,8 +409,7 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol,
-        countStep: this.state.countStep + 1
+        heroPositionCol: heroCol
       })
 
       if (this.state.opponentCount === 1) {
@@ -350,6 +418,7 @@ class App extends Component {
     }
   }
 
+  // Final View
   render () {
     return (
       <div className="App">
