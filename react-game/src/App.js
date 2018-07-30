@@ -12,7 +12,8 @@ class App extends Component {
       matrix: [],
       dataGrid: [],
       heroPositionRow: 0,
-      heroPositionCol: 0
+      heroPositionCol: 0,
+      countStep: 0
     }
     this.openModal = this.openModal.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -126,14 +127,16 @@ class App extends Component {
         }
         table.push(<tr id={i} key={i}>{cols}</tr>)
       }
-
+      console.log(this.state.countStep)
       this.setState({
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol
+        heroPositionCol: heroCol,
+        countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 37) {
+      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -161,9 +164,11 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol
+        heroPositionCol: heroCol,
+        countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 39) {
+      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -191,9 +196,11 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol
+        heroPositionCol: heroCol,
+        countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 40) {
+      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -221,7 +228,8 @@ class App extends Component {
         matrix: table,
         dataGrid: arrayDemo,
         heroPositionRow: heroRow,
-        heroPositionCol: heroCol
+        heroPositionCol: heroCol,
+        countStep: this.state.countStep + 1
       })
     }
   }
