@@ -29,6 +29,6 @@ The games tells the number of steps taken by the hero to beat all the oponents.<
 - Clone the repository
 - Run `npm install`
 - Run `npm start` for developement
-- Run `npm build` for production
+- Run `npm run build` for production
 
 
