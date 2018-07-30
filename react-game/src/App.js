@@ -38,11 +38,31 @@ class App extends Component {
 
   createBoard = () => {
     let table = []
-
+    let arrayDemo = []
     for (let i = 0; i < this.state.boardSize; i++) {
-      let cols = []
+      arrayDemo.push([])
+    }
+    for (let i = 0; i < this.state.boardSize; i++) {
       for (let j = 0; j < this.state.boardSize; j++) {
-        cols.push(<td className="rg-table-data" key={j}>Hello</td>)
+        arrayDemo[i].push('')
+      }
+    }
+    let row = 0
+    let col = 0
+    let l = 0
+    while (l < (this.state.boardSize * this.state.boardSize)) {
+      row = Math.floor((Math.random() * (this.state.boardSize - 1)) + 1)
+      col = Math.floor((Math.random() * (this.state.boardSize - 1)) + 1)
+      if (arrayDemo[row][col] === '') {
+        arrayDemo[row][col] = 'hi'
+      }
+      l = l + 1
+    }
+    console.log(arrayDemo)
+    for (let i = 0; i < arrayDemo.length; i++) {
+      let cols = []
+      for (let j = 0; j < arrayDemo.length; j++) {
+        cols.push(<td className="rg-table-data" key={j}>{arrayDemo[i][j]}</td>)
       }
       table.push(<tr key={i}>{cols}</tr>)
     }
