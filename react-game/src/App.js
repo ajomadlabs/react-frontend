@@ -2,19 +2,21 @@ import React, { Component } from 'react'
 import Header from './components/HeaderComponent'
 import './assets/css/Modal.css'
 import './assets/css/Button.css'
+import './assets/css/Table.css'
 
 class App extends Component {
   constructor () {
     super()
     this.state = {
-      boardSize: ''
+      boardSize: 0,
+      matrix: []
     }
     this.openModal = this.openModal.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+    this.createBoard = this.createBoard.bind(this)
   }
 
-  openModal () {
+  openModal = () => {
     let modal = document.getElementsByClassName('rg-modal')[0]
     modal.style.display = 'block'
     let btn = document.getElementsByClassName('rg-modal-btn')[0]
@@ -28,14 +30,25 @@ class App extends Component {
     }
   }
 
-  handleChange (e) {
+  handleChange = (e) => {
     this.setState({
       boardSize: e.target.value
     })
   }
 
-  handleClick () {
-    console.log(this.state.boardSize)
+  createBoard = () => {
+    let table = []
+
+    for (let i = 0; i < this.state.boardSize; i++) {
+      let cols = []
+      for (let j = 0; j < this.state.boardSize; j++) {
+        cols.push(<td className="rg-table-data" key={j}>Hello</td>)
+      }
+      table.push(<tr key={i}>{cols}</tr>)
+    }
+    this.setState({
+      matrix: table
+    })
   }
 
   render () {
@@ -52,10 +65,17 @@ class App extends Component {
               <input type="text" value={this.state.boardSize} onChange={e => this.handleChange(e)} className="rg-modal-input" placeholder="Enter Board Size"/>
             </center>
             <center>
-              <div onClick={this.handleClick} className="rg-modal-btn">Enter</div>
+              <div onClick={this.createBoard} className="rg-modal-btn">Enter</div>
             </center>
           </div>
         </div>
+        <center>
+          <table className="rg-table">
+            <tbody>
+              {this.state.matrix}
+            </tbody>
+          </table>
+        </center>
       </div>
     )
   }

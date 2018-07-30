@@ -1,0 +1,10 @@
+.rg-table {
+  border: 2px solid #ebebeb;
+  margin-top: 3%;
+  border-collapse: collapse;
+}
+
+.rg-table-data {
+  border: 2px solid #ebebeb;
+  padding: 20px;
+}
