@@ -12,11 +12,11 @@ The games tells the number of steps taken by the hero to beat all the oponents.<
 
 - public
 - src
-&nbsp;&nbsp; - assets
-&nbsp;&nbsp; - components
-&nbsp;&nbsp; - index.css
-&nbsp;&nbsp; - index.js
-&nbsp;&nbsp; - logo.svg
+- &nbsp;&nbsp; assets
+- &nbsp;&nbsp; components
+- &nbsp;&nbsp; index.css
+- &nbsp;&nbsp; index.js
+- &nbsp;&nbsp; logo.svg
 
 ## Pre-requisites
 
