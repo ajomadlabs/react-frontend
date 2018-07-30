@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Header from './components/HeaderComponent'
-import './assets/css/Modal.css'
-import './assets/css/Button.css'
-import './assets/css/Table.css'
+import Header from './HeaderComponent'
+import '../assets/css/Modal.css'
+import '../assets/css/Button.css'
+import '../assets/css/Table.css'
 
 class App extends Component {
   constructor () {
