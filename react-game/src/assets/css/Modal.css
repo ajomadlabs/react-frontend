@@ -55,6 +55,7 @@
   border-radius: .375rem;
   margin-top: 3%;
   cursor: pointer;
+  box-shadow: 5px 5px 25px 0 rgba(46,61,73,.2);
 }
 
 .rg-modal-header {
