@@ -39,6 +39,7 @@ class App extends Component {
   createBoard = () => {
     let table = []
     let arrayDemo = []
+
     for (let i = 0; i < this.state.boardSize; i++) {
       arrayDemo.push([])
     }
@@ -47,6 +48,7 @@ class App extends Component {
         arrayDemo[i].push('')
       }
     }
+
     let row = 0
     let col = 0
     let l = 0
@@ -58,7 +60,19 @@ class App extends Component {
       }
       l = l + 1
     }
-    console.log(arrayDemo)
+    let mid = 0
+    if (Math.ceil(this.state.boardSize % 2) === 0) {
+      mid = Math.ceil(this.state.boardSize / 2)
+    } else {
+      mid = Math.ceil(this.state.boardSize / 2) - 1
+    }
+    for (let i = 0; i < arrayDemo.length; i++) {
+      if (arrayDemo[mid][i] !== 'hi') {
+        arrayDemo[mid][i] = 'hero'
+        break
+      }
+    }
+
     for (let i = 0; i < arrayDemo.length; i++) {
       let cols = []
       for (let j = 0; j < arrayDemo.length; j++) {
