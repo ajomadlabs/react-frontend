@@ -21,7 +21,6 @@ The games tells the number of steps taken by the hero to beat all the oponents.<
 ## Pre-requisites
 
 - Nodejs >8
-- Docker
 - NPM
 - create-react-app (npm package)
 
