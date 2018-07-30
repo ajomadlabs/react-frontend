@@ -127,7 +127,6 @@ class App extends Component {
         }
         table.push(<tr id={i} key={i}>{cols}</tr>)
       }
-      console.log(this.state.countStep)
       this.setState({
         matrix: table,
         dataGrid: arrayDemo,
@@ -136,7 +135,6 @@ class App extends Component {
         countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 37) {
-      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -168,7 +166,6 @@ class App extends Component {
         countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 39) {
-      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
@@ -200,7 +197,6 @@ class App extends Component {
         countStep: this.state.countStep + 1
       })
     } else if (e.keyCode === 40) {
-      console.log(this.state.countStep)
       let arrayDemo = this.state.dataGrid
       let row = this.state.heroPositionRow
       let col = this.state.heroPositionCol
