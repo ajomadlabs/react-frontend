@@ -22,7 +22,6 @@ The games tells the number of steps taken by the hero to beat all the oponents.<
 
 - Nodejs >8
 - NPM
-- create-react-app (npm package)
 
 ## Installation
 
