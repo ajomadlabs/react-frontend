@@ -1,4 +1,4 @@
-# Hacker Bay Frontend
+# React Frontend Game
 
 ## Description
 
